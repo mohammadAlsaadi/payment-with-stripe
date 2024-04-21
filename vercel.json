@@ -15,14 +15,5 @@
       "src": "/(.*)",
       "dest": "server.js"
     }
-  ],
-  "env": {
-    "CLIENT_URL": "https://red-zone-nutrition-exj1dftth-mohammads-projects-7f85090a.vercel.app"
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
   ]
 }
