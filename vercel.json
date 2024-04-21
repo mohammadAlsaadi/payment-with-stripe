@@ -24,8 +24,5 @@
       "source": "/(.*)",
       "destination": "/$1"
     }
-  ],
-  "cors": {
-    "origin": "$CLIENT_URL"
-  }
+  ]
 }
