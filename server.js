@@ -1,13 +1,18 @@
 require("dotenv").config();
 
 const express = require("express");
-const app = express();
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
+const app = express();
+
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL, // Allow requests from your frontend application
+  })
+);
 
 app.post("/create-checkout-session", async (req, res) => {
   const { items, discount } = req.body;
