@@ -1,5 +1,11 @@
 {
   "version": 2,
-  "builds": [{ "src": "./server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/" }]
+  "builds": [
+    { "src": "./server.js", "use": "@vercel/node" },
+    { "src": "./frontend/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/create-checkout-session", "dest": "./server.js" },
+    { "src": "/(.*)", "dest": "/frontend/index.html" }
+  ]
 }
