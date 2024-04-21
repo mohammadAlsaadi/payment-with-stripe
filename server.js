@@ -44,7 +44,7 @@ app.post("/create-checkout-session", async (req, res) => {
           product_data: {
             name: "Shipping",
           },
-          unit_amount: 3000, //  shipping cost is 3 JOD
+          unit_amount: 3000, // shipping cost is 3 JOD
         },
         quantity: 1,
       });
@@ -63,8 +63,7 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000 || 3002;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
-//
