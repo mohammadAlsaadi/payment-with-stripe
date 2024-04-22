@@ -9,7 +9,7 @@ const stripe = require("stripe")(
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors({ origin: "https://red-zone-nutrition-28cf.vercel.app" }));
+app.use(cors({ origin: "https://red-zone-nutrition.vercel.app" }));
 
 app.post("/create-checkout-session", async (req, res) => {
   const { items, discount } = req.body;
@@ -56,8 +56,8 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "payment",
 
       line_items: lineItems,
-      success_url: `https://red-zone-nutrition-28cf.vercel.app/success-payment`,
-      cancel_url: `https://red-zone-nutrition-28cf.vercel.app/checkout`,
+      success_url: `https://red-zone-nutrition.vercel.app/success-payment`,
+      cancel_url: `https://red-zone-nutrition.vercel.app/checkout`,
     });
     res.json({ url: session.url });
   } catch (error) {
